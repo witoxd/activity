@@ -1,0 +1,48 @@
+/* Estilos del header */
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff;
+    padding: 1rem 2rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: relative;
+    z-index: 1000;
+  }
+  
+  .logo h1 {
+    color: #f57f17; /* Color principal para el nombre de la tienda */
+    font-size: 1.8rem;
+    font-weight: bold;
+  }
+  
+  .search-bar {
+    display: flex;
+    align-items: center;
+    flex: 1;
+    margin: 0 2rem;
+  }
+  
+  .search-bar input {
+    width: 100%;
+    max-width: 400px;
+    padding: 0.5rem 1rem;
+    border-radius: 25px;
+    border: 1px solid #ffd54f;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+  }
+  
+  .search-bar button {
+    margin-left: 0.5rem;
+  }
+  
+  .user-actions {
+    display: flex;
+    align-items: center;
+  }
+  
+  .user-actions button {
+    margin-left: 0.5rem;
+  }
+  

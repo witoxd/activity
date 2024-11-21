@@ -1,0 +1,452 @@
+<!-- <p-card class="w-12 h-full">
+    <ng-template pTemplate="header">
+        <div class="flex justify-content-between flex-wrap">
+            <h3 class="ml-4">
+                Registro de Asistance
+            </h3>
+            <div class="mt-2 mr-2">
+                <a 
+                  pButton 
+                  pRipple
+                  label="Crear Asistance" 
+                  icon="pi pi-user-plus"
+                  class="bg-cyan-600"
+                  [routerLink]="['/Asistance/nuevo']">
+                </a>
+            </div>
+        </div>
+    </ng-template>
+
+    <p>
+        <p-table [value]="Asistance"
+            styleClass="p-datatable-gridlines" 
+            responsiveLayout="stack" 
+            [paginator]="true"
+            [rows]="5"
+            [rowsPerPageOptions]="[5, 10, 20]"
+            [tableStyle]="{ 'min-width': '40rem' }"
+            [globalFilterFields]="['date_input', 'Userid', 'telefono', 'correo']">
+
+            <ng-template pTemplate="header">
+                <tr>
+                    <th pSortableColumn="date_input" style="width:19%">
+                        date_input <p-sortIcon field="date_input" />
+                    </th>
+                    <th pSortableColumn="Userid" style="width:19%">
+                        Dirección <p-sortIcon field="Userid" />
+                    </th>
+                    <th pSortableColumn="telefono" style="width:19%">
+                        Teléfono <p-sortIcon field="telefono" />
+                    </th>
+                    <th pSortableColumn="correo" style="width:19%">
+                        Correo <p-sortIcon field="correo" />
+                    </th>
+                    <th class="flex justify-content-center flex-wrap">Acciones</th>
+                </tr>
+                <tr>
+                    <th>
+                        <p-columnFilter type="text" field="date_input" [showClearButton]="true" />
+                    </th>
+                    <th>
+                        <p-columnFilter type="text" field="Userid" [showClearButton]="true" />
+                    </th>
+                    <th>
+                        <p-columnFilter type="text" field="telefono" [showClearButton]="true" />
+                    </th>
+                    <th>
+                        <p-columnFilter type="text" field="correo" [showClearButton]="true" />
+                    </th>
+                </tr>
+            </ng-template>
+
+            <ng-template pTemplate="body" let-Asistance>
+                <tr>
+                    <td>{{ Asistance.date_input }}</td>
+                    <td>{{ Asistance.Userid }}</td>
+                    <td>{{ Asistance.telefono }}</td>
+                    <td>{{ Asistance.correo }}</td>
+                    <td>
+                        <a 
+                            pButton 
+                            pRipple
+                            icon="pi pi-sync"
+                            severity="warning"
+                            class="mr-1"
+                            [routerLink]="['/Asistance/edit', Asistance.id]">
+                        </a>
+                        <button 
+                            pButton 
+                            pRipple
+                            severity="danger"
+                            icon="pi pi-eraser"
+                            class="mr-1"
+                            (click)="eliminar(Asistance.id)">
+                        </button>
+                    </td>
+                </tr>
+            </ng-template>
+        </p-table>
+    </p>
+</p-card> -->
+
+<!-- <p-card class="w-12 h-full">
+    <ng-template pTemplate="header">
+        <div class="flex justify-content-between flex-wrap">
+            <h3 class="ml-4">
+                Registro de Asistance
+            </h3>
+            <div class="mt-2 mr-2">
+                <a 
+                  pButton 
+                  pRipple
+                  label="Crear Asistance" 
+                  icon="pi pi-user-plus"
+                  class="bg-cyan-600"
+                  [routerLink]="['/Asistance/nuevo']">
+                </a>
+            </div>
+        </div>
+    </ng-template>
+
+    <p>
+        <p-table [value]="Asistance"
+            styleClass="p-datatable-gridlines" 
+            responsiveLayout="stack" 
+            [paginator]="true"
+            [rows]="5"
+            [rowsPerPageOptions]="[5, 10, 20]"
+            [tableStyle]="{ 'min-width': '40rem' }"
+            [globalFilterFields]="['date_input', 'Userid', 'telefono', 'correo']">
+
+            <ng-template pTemplate="header">
+                <tr>
+                    <th pSortableColumn="date_input" style="width:19%">
+                        date_input <p-sortIcon field="date_input" />
+                    </th>
+                    <th pSortableColumn="Userid" style="width:19%">
+                        Dirección <p-sortIcon field="Userid" />
+                    </th>
+                    <th pSortableColumn="telefono" style="width:19%">
+                        Teléfono <p-sortIcon field="telefono" />
+                    </th>
+                    <th pSortableColumn="correo" style="width:19%">
+                        Correo <p-sortIcon field="correo" />
+                    </th>
+                    <th class="flex justify-content-center flex-wrap">Acciones</th>
+                </tr>
+                <tr>
+                    <th>
+                        <p-columnFilter type="text" field="date_input" [showClearButton]="true" />
+                    </th>
+                    <th>
+                        <p-columnFilter type="text" field="Userid" [showClearButton]="true" />
+                    </th>
+                    <th>
+                        <p-columnFilter type="text" field="telefono" [showClearButton]="true" />
+                    </th>
+                    <th>
+                        <p-columnFilter type="text" field="correo" [showClearButton]="true" />
+                    </th>
+                </tr>
+            </ng-template>
+
+            <ng-template pTemplate="body" let-Asistance>
+                <tr>
+                     
+                    <td [pEditableColumn]="Asistance.date_input" pEditableColumnField="date_input">
+                        <p-cellEditor>
+                            <ng-template pTemplate="input">
+                                <input pInputText type="text" [(ngModel)]="Asistance.date_input" />
+                            </ng-template>
+                            <ng-template pTemplate="output">
+                                {{ Asistance.date_input }}
+                            </ng-template>
+                        </p-cellEditor>
+                    </td>
+
+                    
+                    <td [pEditableColumn]="Asistance.Userid" pEditableColumnField="Userid">
+                        <p-cellEditor>
+                            <ng-template pTemplate="input">
+                                <input pInputText type="text" [(ngModel)]="Asistance.Userid" />
+                            </ng-template>
+                            <ng-template pTemplate="output">
+                                {{ Asistance.Userid }}
+                            </ng-template>
+                        </p-cellEditor>
+                    </td>
+
+                    
+                    <td [pEditableColumn]="Asistance.telefono" pEditableColumnField="telefono">
+                        <p-cellEditor>
+                            <ng-template pTemplate="input">
+                                <input pInputText type="text" [(ngModel)]="Asistance.telefono" />
+                            </ng-template>
+                            <ng-template pTemplate="output">
+                                {{ Asistance.telefono }}
+                            </ng-template>
+                        </p-cellEditor>
+                    </td>
+
+                   
+                    <td [pEditableColumn]="Asistance.correo" pEditableColumnField="correo">
+                        <p-cellEditor>
+                            <ng-template pTemplate="input">
+                                <input pInputText type="text" [(ngModel)]="Asistance.correo" />
+                            </ng-template>
+                            <ng-template pTemplate="output">
+                                {{ Asistance.correo }}
+                            </ng-template>
+                        </p-cellEditor>
+                    </td>
+
+                
+                    <td>
+                        <a 
+                            pButton 
+                            pRipple
+                            icon="pi pi-sync"
+                            severity="warning"
+                            class="mr-1"
+                            [raised]="true"
+                            [routerLink]="['/Asistance/edit', Asistance.id]">
+                        </a>
+                        <button 
+                            pButton 
+                            pRipple
+                            severity="danger"
+                            icon="pi pi-trash"
+                            class="mr-1"
+                            [raised]="true"
+                            (click)="eliminar(Asistance.id)">
+                        </button>
+                    </td>
+                </tr>
+            </ng-template>
+        </p-table>
+    </p>
+</p-card>
+ -->
+ <!-- <p-card class="w-12 h-full">
+    <ng-template pTemplate="header">
+        <div class="flex justify-content-between flex-wrap">
+            <h3 class="ml-4">Registro de Assistance</h3>
+            <div class="mt-2 mr-2">
+                <a 
+                    pButton 
+                    pRipple
+                    label="Crear Assistance" 
+                    icon="pi pi-user-plus"
+                    class="bg-cyan-600"
+                    [routerLink]="['/Assistance/nuevo']">
+                </a>
+            </div>
+        </div>
+    </ng-template>
+
+    <p>
+        <p-table [value]="Activitys"
+                 styleClass="p-datatable-gridlines" 
+                 responsiveLayout="stack" 
+                 [paginator]="true"
+                 [rows]="5"
+                 [rowsPerPageOptions]="[5, 10, 20]"
+                 [tableStyle]="{ 'min-width': '40rem' }"
+                 [globalFilterFields]="['date_input', 'UserId', 'telefono', 'correo']">
+
+            <ng-template pTemplate="header">
+                <tr>
+                    <th pSortableColumn="date_input" style="width:19%">Fecha <p-sortIcon field="date_input" /></th>
+                    <th pSortableColumn="UserId" style="width:19%">ID Usuario <p-sortIcon field="UserId" /></th>
+
+                </tr>
+                <tr>
+                    <th><p-columnFilter type="text" field="date_input" [showClearButton]="true" /></th>
+                    <th><p-columnFilter type="text" field="UserId" [showClearButton]="true" /></th>
+
+                </tr>
+            </ng-template>
+
+            <ng-template pTemplate="body" let-Assistance>
+                <tr>
+                
+                    <td [pEditableColumn]="Assistance.date_input" pEditableColumnField="date_input">
+                        <p-cellEditor>
+                            <ng-template pTemplate="input">
+                                <input pInputText type="text" [(ngModel)]="Assistance.date_input" />
+                            </ng-template>
+                            <ng-template pTemplate="output">
+                                {{ Assistance.date_input }}
+                            </ng-template>
+                        </p-cellEditor>
+                    </td>
+
+                 
+                    <td [pEditableColumn]="Assistance.UserId" pEditableColumnField="UserId">
+                        <p-cellEditor>
+                            <ng-template pTemplate="input">
+                                <input pInputText type="text" [(ngModel)]="Assistance.UserId" />
+                            </ng-template>
+                            <ng-template pTemplate="output">
+                                {{ Assistance.UserId }}
+                            </ng-template>
+                        </p-cellEditor>
+                    </td>
+
+
+           
+                    <td>
+                        <button 
+                            pButton 
+                            pRipple
+                            icon="pi pi-sync"
+                            severity="warning"
+                            class="mr-1"
+                            [raised]="true"
+                            (click)="actualizarActivity(Assistance)">
+                        </button>
+                        
+                        <button 
+                            pButton 
+                            pRipple
+                            severity="danger"
+                            icon="pi pi-trash"
+                            class="mr-1"
+                            [raised]="true"
+                            (click)="eliminar(Assistance.id)">
+                        </button>
+                    </td>
+                </tr>
+            </ng-template>
+        </p-table>
+    </p>
+</p-card> -->
+
+<p-card class="w-12 h-full">
+    <ng-template pTemplate="header">
+        <div class="flex justify-content-between flex-wrap">
+            <h3 class="ml-4">Registro de Actividades</h3>
+            <div class="mt-2 mr-2">
+                <a 
+                    pButton 
+                    pRipple
+                    label="Crear Actividad" 
+                    icon="pi pi-user-plus"
+                    class="bg-cyan-600"
+                    [routerLink]="['/Activitys/new']">
+                </a>
+            </div>
+        </div>
+    </ng-template>
+
+    <p>
+        <p-table [value]="Activitys"
+                 styleClass="p-datatable-gridlines" 
+                 responsiveLayout="stack" 
+                 [paginator]="true"
+                 [rows]="5"
+                 [rowsPerPageOptions]="[5, 10, 20]"
+                 [tableStyle]="{ 'min-width': '60rem' }"
+                 [globalFilterFields]="['id', 'date_act', 'description', 'name', 'UserId']">
+
+            <ng-template pTemplate="header">
+                <tr>
+                    <th pSortableColumn="id" style="width:10%">ID <p-sortIcon field="id" /></th>
+                    <th pSortableColumn="date_act" style="width:20%">Fecha <p-sortIcon field="date_act" /></th>
+                    <th pSortableColumn="description" style="width:30%">Descripción <p-sortIcon field="description" /></th>
+                    <th pSortableColumn="name" style="width:20%">Nombre <p-sortIcon field="name" /></th>
+                    <th pSortableColumn="UserId" style="width:10%">ID Usuario <p-sortIcon field="UserId" /></th>
+                    <th class="flex justify-content-center">Acciones</th>
+                </tr>
+                <tr>
+                    <th><p-columnFilter type="text" field="id" [showClearButton]="true" /></th>
+                    <th><p-columnFilter type="text" field="date_act" [showClearButton]="true" /></th>
+                    <th><p-columnFilter type="text" field="description" [showClearButton]="true" /></th>
+                    <th><p-columnFilter type="text" field="name" [showClearButton]="true" /></th>
+                    <th><p-columnFilter type="text" field="UserId" [showClearButton]="true" /></th>
+                    <th></th>
+                </tr>
+            </ng-template>
+
+            <ng-template pTemplate="body" let-activity>
+                <tr>
+                    <!-- Columna para ID -->
+                    <td>{{ activity.id }}</td>
+
+                    <!-- Columna editable para date_act -->
+                    <td [pEditableColumn]="activity.date_act" pEditableColumnField="date_act">
+                        <p-cellEditor>
+                            <ng-template pTemplate="input">
+                                <input pInputText type="text" [(ngModel)]="activity.date_act" />
+                            </ng-template>
+                            <ng-template pTemplate="output">
+                                {{ activity.date_act }}
+                            </ng-template>
+                        </p-cellEditor>
+                    </td>
+
+                    <!-- Columna editable para description -->
+                    <td [pEditableColumn]="activity.description" pEditableColumnField="description">
+                        <p-cellEditor>
+                            <ng-template pTemplate="input">
+                                <input pInputText type="text" [(ngModel)]="activity.description" />
+                            </ng-template>
+                            <ng-template pTemplate="output">
+                                {{ activity.description }}
+                            </ng-template>
+                        </p-cellEditor>
+                    </td>
+
+                    <!-- Columna editable para name -->
+                    <td [pEditableColumn]="activity.name" pEditableColumnField="name">
+                        <p-cellEditor>
+                            <ng-template pTemplate="input">
+                                <input pInputText type="text" [(ngModel)]="activity.name" />
+                            </ng-template>
+                            <ng-template pTemplate="output">
+                                {{ activity.name }}
+                            </ng-template>
+                        </p-cellEditor>
+                    </td>
+
+                    <!-- Columna editable para UserId -->
+                    <td [pEditableColumn]="activity.UserId" pEditableColumnField="UserId">
+                        <p-cellEditor>
+                            <ng-template pTemplate="input">
+                                <input pInputText type="number" [(ngModel)]="activity.UserId" />
+                            </ng-template>
+                            <ng-template pTemplate="output">
+                                {{ activity.UserId }}
+                            </ng-template>
+                        </p-cellEditor>
+                    </td>
+
+                    <!-- Columna de acciones -->
+                    <td>
+                        <!-- Botón de actualizar -->
+                        <button 
+                            pButton 
+                            pRipple
+                            icon="pi pi-sync"
+                            severity="warning"
+                            class="mr-1"
+                            [raised]="true"
+                            (click)="actualizarActivity(activity)">
+                        </button>
+                        
+                        <!-- Botón de eliminar -->
+                        <button 
+                            pButton 
+                            pRipple
+                            severity="danger"
+                            icon="pi pi-trash"
+                            class="mr-1"
+                            [raised]="true"
+                            (click)="eliminar(activity.id)">
+                        </button>
+                    </td>
+                </tr>
+            </ng-template>
+        </p-table>
+    </p>
+</p-card>

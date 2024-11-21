@@ -1,0 +1,45 @@
+main {
+    display: grid;
+    gap: 10px;
+    grid-template-columns: 1fr 1fr 1fr 1fr  1fr;
+    grid-template-areas:
+    "header header  header  header  header"
+    "aside  section section section section"
+    "aside  section section section section"
+    "footer footer  footer  footer  footer";
+    row-gap: 0;
+    column-gap: 0;
+    grid-template-rows: 10% 80% 10%;
+    height: 150vh;
+}
+
+header {
+    grid-area: header;
+    /* border: 1px solid royalblue; */
+}
+
+aside {
+    grid-area: aside;
+    /* border: 1px solid royalblue; */
+}
+
+section {
+    grid-area: section;
+    /* border: 1px solid royalblue; */
+}
+
+.recuadros {
+    display: flex;
+    flex-flow: row wrap;
+    row-gap: 20px;
+    margin: 2px 20px 2px 5px;
+}
+
+.elemento {
+    width: 25%;
+}
+
+footer {
+    grid-area: footer;
+    /* border: 1px solid royalblue; */
+}

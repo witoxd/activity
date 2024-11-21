@@ -1,0 +1,56 @@
+
+/* Estilo para el panel lateral */
+.p-panelmenu {
+    background-color: #f5f5f5; /* Color de fondo gris claro */
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+    padding: 10px;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  /* Estilo para los encabezados de cada sección */
+  .p-panelmenu .p-panelmenu-header {
+    background-color: #ecdeca; /* Naranja claro */
+    color: #ffffff; /* Texto blanco */
+    font-weight: bold;
+    font-size: 1rem;
+    padding: 10px 15px;
+    border-radius: 8px; /* Bordes redondeados */
+    margin-bottom: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .p-panelmenu .p-panelmenu-header:hover {
+    background-color: #ffa726; /* Naranja más oscuro al hover */
+  }
+  
+  /* Estilo para los elementos de los menús desplegables */
+  .p-panelmenu .p-menuitem-link {
+    background-color: #fff3e0; /* Fondo naranja claro */
+    color: #ff7043; /* Texto naranja */
+    border-radius: 5px;
+    margin: 5px 0;
+    padding: 8px 12px;
+    font-size: 0.9rem;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  .p-panelmenu .p-menuitem-link:hover {
+    background-color: #ffe0b2; /* Fondo naranja más claro al hover */
+    color: #f4511e; /* Texto más oscuro al hover */
+  }
+  
+  /* Estilo para los íconos */
+  .p-panelmenu .p-menuitem-link .pi {
+    margin-right: 10px; /* Espacio entre el ícono y el texto */
+    font-size: 1.1rem;
+  }
+  
+  /* Diseño responsivo para pantallas pequeñas */
+  @media (max-width: 768px) {
+    .p-panelmenu {
+      width: 100%; /* El panel ocupa todo el ancho en pantallas pequeñas */
+    }
+  }
+  
